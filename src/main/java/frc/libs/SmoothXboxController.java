@@ -1,6 +1,5 @@
 package frc.libs;
 
-// import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.Constants;
 
@@ -25,9 +24,4 @@ public final class SmoothXboxController extends XboxController implements Consta
 	public double getSmoothedAltY() {
 		return Math.pow(super.getRawAxis(5), 3);
 	}
-	
-	// private double getDeadband(double d) {
-	// 	if(Math.abs(d) > DEADBAND) return d;
-	// 	else return 0;
-	// }
 }
