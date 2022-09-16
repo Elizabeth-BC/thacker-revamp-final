@@ -2,8 +2,8 @@ package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.cscore.UsbCamera;
-import edu.wpi.first.wpilibj.GenericHID;
-import edu.wpi.first.wpilibj.PS4Controller.Button;
+import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
@@ -28,7 +28,7 @@ import frc.libs.*;
  */
 public class RobotContainer {
   // The robot's subsystems and OI devices
-  public static final SmoothXboxController xbox = new SmoothXboxController(0);
+  public static final XboxController xbox = new SmoothXboxController(0);
 
   private static final SendableChooser<Command> chooser = new SendableChooser<>();
 
@@ -61,8 +61,8 @@ public class RobotContainer {
 
   private void configureButtonBindings() {
     new JoystickButton(xbox, Button.kLeftBumper.value)
-    .whenPressed(new DeployIntake())
     .whenPressed(new SpinIntakeIn())
+    .whenPressed(new DeployIntake())
     .whenReleased(new RetractIntake());
     //WORK WITH DRIVERS TO FIGURE OUT CONTROLS AND CHECK THAT THEY ALL WORK
   }
